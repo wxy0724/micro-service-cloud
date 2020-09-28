@@ -3,6 +3,7 @@ package com.simmoon.order.controller;
 import com.simmoon.commons.entites.CommonResult;
 import com.simmoon.commons.entites.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -28,6 +29,16 @@ public class OrderController {
     @GetMapping("/consumer/payment/getPayment")
     public CommonResult<Payment> getPayment(@PathParam("id") Long id) {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/getPayment/" + id, CommonResult.class);
+    }
+
+    @GetMapping("/consumer/payment/getForEntity/{id}")
+    public CommonResult<Payment> getForEntity(@PathParam("id") Long id) {
+        ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL + "/payment/getPayment/" + id, CommonResult.class);
+        if (entity.getStatusCode().is2xxSuccessful()) {
+            return entity.getBody();
+        } else {
+            return new CommonResult<>(444, "操作失败！");
+        }
     }
 
 
