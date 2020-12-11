@@ -23,7 +23,7 @@ public class PaymentServiceImpl implements PaymentService {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
     })
     public String paymentInfoTimeOut(Integer id) {
-        long timeNum = 3L;
+        long timeNum = 5L;
         try {
             TimeUnit.SECONDS.sleep(timeNum);
         } catch (InterruptedException e) {
@@ -32,7 +32,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     public String paymentInfoTimeoutHandler(Integer id) {
-        return "线程池：" + Thread.currentThread().getName() + "paymentInfoTimeoutHandler";
+        return "线程池：" + Thread.currentThread().getName() + "paymentInfoTimeoutHandler failed";
     }
 
     //    服务熔断
@@ -44,7 +44,6 @@ public class PaymentServiceImpl implements PaymentService {
     })
     @Override
     public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
-
         if (id < 0) {
             throw new RuntimeException();
         }

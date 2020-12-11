@@ -62,5 +62,14 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    /**
+     * 自定义轮询算法
+     * @return
+     */
+    @GetMapping(value = "/payment/customeRibbonLB")
+    public String getPaymentLB() {
+        return serverPort;
+    }
+
 
 }

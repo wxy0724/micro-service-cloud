@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableEurekaClient
 @SpringBootApplication
 @EnableCircuitBreaker
-public class PaymentHystrixApplication {
+public class  PaymentHystrixApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(PaymentHystrixApplication.class, args);

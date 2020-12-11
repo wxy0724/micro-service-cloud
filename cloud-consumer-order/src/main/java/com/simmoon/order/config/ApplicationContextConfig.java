@@ -18,8 +18,8 @@ public class ApplicationContextConfig {
      *      ResponseBean.class：HTTP响应转换被转换成的对象类型
      * @return
      */
-    @Bean
-    @LoadBalanced // 使用@LoadBalanced注解赋予RestTemplate负载均衡的能力
+//    @LoadBalanced
+    @Bean // 使用@LoadBalanced注解赋予RestTemplate负载均衡的能力
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
