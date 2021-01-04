@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "eureka.instance.perferIpAddress",
+      "type": "java.lang.String",
+      "description": "Description for eureka.instance.perferIpAddress."
+  }
+] }

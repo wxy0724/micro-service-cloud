@@ -1,4 +1,4 @@
-package controller;
+package com.simmoon.controller;
 
 import com.simmoon.commons.entites.CommonResult;
 import com.simmoon.commons.entites.Payment;
