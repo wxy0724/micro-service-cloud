@@ -16,6 +16,7 @@
         <module name="cloud-consumer-hystrix-order" />
         <module name="cloud-gateway-gateway" />
         <module name="cloudalibaba-consumer-nacos-order84" />
+        <module name="cloud-config-center" />
         <module name="cloud-provider-payment" />
         <module name="cloud-consumer-hystrix-dashboard9001" />
         <module name="cloudalibaba-provider-payment9004" />
@@ -24,6 +25,7 @@
         <module name="cloud-zuul-gateway" />
         <module name="cloud-consumer-order" />
         <module name="cloudalibaba-sentinel-service8401" />
+        <module name="cloud-config-client" />
         <module name="cloud-consumer-feign-order" />
         <module name="cloudalibaba-consumer-nacos-order" />
       </profile>
